@@ -1,0 +1,123 @@
+:root{
+    /*Primary*/
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    /*Neutral*/
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+
+}
+body{
+    background: var(--Light-Gray);
+    font-family: 'Karla', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.single{
+    background-color:#fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px rgba($color: #000000, $alpha: 0.1);
+    width: 640px;
+    &-community{
+        padding: 2rem 3rem;
+        h1{
+            font-size: 3rem;
+            color:var(--Cyan);
+        }
+        h3{
+            font-size: 1.8rem;
+            color:var(--Bright-Yellow);
+        }
+        p{
+            color:var(--Grayish-Blue);
+            font-size: 1.6rem;
+            line-height: 30px;
+            
+        }
+    }
+    &-price{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &-subscription{
+            padding:2rem 3rem;
+            background-color: #2BB3B1;
+            h3{
+                font-size: 1.8rem;
+                color:#fff;
+            }
+            p{
+                color:var(--Light-Gray);
+                font-size: 1.6rem;
+                &:nth-child(2){
+                    font-weight: 700;
+                    font-size: 3rem;
+                    margin:0;
+                }
+                &:nth-child(3){
+                    margin:10px 0;
+                }
+                span{
+                    font-size: 1.4rem;
+                    color:#79DBDC;
+                }
+            }
+            button{
+                width: 100%;
+                border:0;
+                background-color: var(--Bright-Yellow);
+                color:#fff;
+                font-weight: 700;
+                padding: 1.4rem;
+                border-radius: 5px;
+                margin: 1.6rem 0;
+                box-shadow: 0px 2px 20px rgba($color: #000000, $alpha: 0.1);
+                cursor: pointer;
+                outline: none;
+            }
+        }
+        &-us{
+            padding:2rem 3rem;
+            background-color: #4ABEBD;
+
+            h3{
+                font-size: 1.8rem;
+                color:#fff;
+            }
+            ul{
+                margin:0;
+                padding:0;
+                list-style: none;
+            }
+            li{
+                font-size: 1.4rem;
+                color:#97E6E8;
+                margin:0.3rem 0;
+            }
+        }
+    }
+}
+@media(max-width:375px){
+    .container{
+        height:100%;
+    }
+    .single{
+        margin:4rem 2rem;
+        &-price{
+            grid-template-columns: 1fr;
+        }
+    }
+}
